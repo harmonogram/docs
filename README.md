@@ -45,18 +45,45 @@ mozna bylo latwo stworzyc i przetestowac prototyp
           |                   |
           |                   |
           v                   v
-    +-----+----+          +---+-----+
-    | TRIGGER  |      +---+ PROJEKT +--+
-    +----------+      |   +---------+  |
-                      |                |
-                      |                |
-                      |                |
-                      |                |
-            +---------v----+     +-----v---------+
-            | Termin Input |     | Termin Output |
-            +--------------+     +---------------+
+    +-----+----+         +----+-----+
+    | TRIGGER  |         +  PROJECT +
+    +----------+         +-----+----+ 
+                               | 
+                          +----+----+
+                          +  JOBS   +
+                          +----+----+  
+                               |
+                               |
+                               |
+                     +---------v-----+
+                     | Termin Output |
+                     +---------------+
             
 http://asciiflow.com/
+
+
+
+Projects
++ project_id
++ name
++ descriptions
++ tags
++ settings
+
+Termin
++ id
++ Name
++ Description
++ UNIT
++ SALDO
++ TYPE
++ Status
+
+Jobs
++ name
++ projekt_id
++ termin_id
++ termin_type
 
 ## Interfejs
 Aplikacja ma byc prosta do obslugi
@@ -200,27 +227,32 @@ Prezentacja wynikow w tabeli output
 + project_id
 + name
 + descriptions
-
++ tags
++ settings
 
 -----
 ###### EXAMPLE
 + projekt_id
-+ name: Oszczednosci
++ name: comiesieczny raport osczednosci
 + descriptions: wykonywanie na koniec miesiaca przeliczenia ile zostalo oszczednosci z wydanych pieniedzy, poprzez sprawdzenie salda wydatkow poniesionych/zaplanowanych
-+ value_factor: 1 (default)
++ tags:
++ settings - config data for create event
+  + value_factor: 1 (default)
 
 Inne:
 + Tworzenia arkusza dla pracownikow na nowy miesiac
 + Realizacja planu zmian, jesli ktos zmienil swoj plan i oka
 
 
-### Project_Termin
-moze byc tylko jeden termin, np do ustawiania co roku okreslony
-
+### Jobs
+Project_Termin
+moze byc tylko jeden termin, np do ustawiania co roku okreslony, bez wzgledu na wartosc innych danych
+jesli sa dwa, to input okresla warunek pozwalajacy na wykonanie jakiegos dzialanani lub konwersje danych
 Input-Output
++ name
 + projekt_id
 + termin_id
-+ termin_type: In/Out
++ termin_type: In- read / Out- create/update/remove
 
 //SETTINGS
 + warunek wykonania tego dzialania: np wartosc nie mniejsza od zera
@@ -247,15 +279,11 @@ CALC
  expired, pozostaly niewykorzystany w czasie, roznica +/-
  
 
-### Events, projekt_trigger
+### Events, project_trigger
 Tabela wydarzen odnosnie projektow
 + id
-+ projekt_id
++ project_id
 + trigger_id
-+ name: comiesieczny raport osczednosci
-+ descriptions: comiesieczne wykonywanie raportu osczednosci
-+ tags:
-+ settings - config data for create event
 
 ### Events_logs
 + chenged
