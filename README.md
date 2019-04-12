@@ -42,10 +42,13 @@ zawiera 3 podstawowe tabele:
 
 https://www.kalendarz-365.pl/ksiezyca/kalendarz-ksiezycowy.html
 
-### Tabela wzorcow do zbierania danych, Pattern
+### Pattern
+Tabela wzorcow do zbierania danych,
 okreslenie jakie dane beda zbierane
+***
 
-### Tabela do zbierania danych, Input
+### Input
+Tabela do zbierania danych,
 dodawanie danych z formularza lub aktywnych modolow na stronie www/aplikacji
 
 id
@@ -164,18 +167,17 @@ Prezentacja wynikow w tabeli output
 + value_factor
 
 
-### Tabela wydarzen odnosnie projektow, Events: projekt_trigger
-Events:
+### Events, projekt_trigger
+Tabela wydarzen odnosnie projektow
 + id
-+ projekt_in_id
-+ projekt_out_id
++ projekt_id
 + trigger_id
 + name: comiesieczny raport osczednosci
 + descriptions: comiesieczne wykonywanie raportu osczednosci
 + tags:
 + settings - config data for create event
 
-events_logs
+### Events_logs
 + chenged
 + executed
 + status
