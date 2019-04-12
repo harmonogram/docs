@@ -5,11 +5,15 @@ Dokumentacja projektu harmonogramow
 + Stworzenie dokumentacji
 + prototyp na python, w edytorze jupyter, aby 
 mozna bylo latwo stworzyc i przetestowac prototyp
++ stworzenie prostych scenariuszy testowych
 + stworzenie kolejnych wersji pozwalajacych na latwe kontrolowanie stanu obecnego 
 + wersje z mozliwoscia odtwarzania poprzednich stanow, naprawiania bledow, anulowania przeliczen
-
-
-
++ budowa API
++ budowa frontendu:
+ widok kalendarza, listy, tabeli, drzewa
+ mozliwosc dodawania, edytowania
+ testy
+ 
 
 ## Zasad dzialania
 
