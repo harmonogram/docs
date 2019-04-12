@@ -49,12 +49,12 @@ okreslenie jakie dane beda zbierane
 dodawanie danych z formularza lub aktywnych modolow na stronie www/aplikacji
 
 id
-name
-description
+Name
+Description
 UNIT
 SALDO
 TYPE
-status: modyfikowane, przeniesione, zarchiwizowane, przeliczone, itd
+Status: modyfikowane, przeniesione, zarchiwizowane, przeliczone, itd
 
 #### Zaleznosci
 
@@ -132,27 +132,72 @@ Prezentacja wynikow w tabeli output
 + status_in: aktywne
 + status_out: obliczone
 
-
-
-### Tabela wydarzen odnosnie projektow, Events
+##### Wersja 2
 
 + projekt_id
++ name: Oszczednosci
++ descriptions: wykonywanie na koniec miesiaca przeliczenia ile zostalo oszczednosci z wydanych pieniedzy, poprzez sprawdzenie salda wydatkow poniesionych/zaplanowanych
+
++ data_from: 1 April 2019 // current month
++ data_to: 30 April 2019
++ saldo: spendings
++ type: available
++ unit: EUR
++ value_factor: 4,2 // value_in: 100 -> value_out: 420
++ status: aktywne
+
+##### Wersja 3
++ projekt_id
++ name: Oszczednosci
++ descriptions: wykonywanie na koniec miesiaca przeliczenia ile zostalo oszczednosci z wydanych pieniedzy, poprzez sprawdzenie salda wydatkow poniesionych/zaplanowanych
++ input_id
++ output_id
++ value_factor
+
+-----
+
++ projekt_id
++ name: Oszczednosci
++ descriptions: wykonywanie na koniec miesiaca przeliczenia ile zostalo oszczednosci z wydanych pieniedzy, poprzez sprawdzenie salda wydatkow poniesionych/zaplanowanych
++ input_id
++ output_id
++ value_factor
+
+
+### Tabela wydarzen odnosnie projektow, Events: projekt_trigger
+Events:
++ id
++ projekt_in_id
++ projekt_out_id
++ trigger_id
 + name: comiesieczny raport osczednosci
 + descriptions: comiesieczne wykonywanie raportu osczednosci
-
++ tags:
 + settings - config data for create event
-+ type: period_time - jak czesto maja byc wykonywane, czas, period
-+ unit: month
-+ value: 1
+
+events_logs
++ chenged
++ executed
++ status
++ info
+
+### Trigger, wyzwalacz
+
+ + trigger_id
+ + name: comiesieczne
+ + type: period_time - jak czesto maja byc wykonywane, czas, period
+ + unit: month
+ + value: 1
+ 
 
 #### Zaleznosci
 
-event_type:
+type:
  + id
  + name 
  + description
 
-event_unit
+unit
  + id
  + unit_id // parent id
  + name 
