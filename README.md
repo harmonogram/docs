@@ -61,11 +61,12 @@ Status: modyfikowane, przeniesione, zarchiwizowane, przeliczone, itd
 
 #### Zaleznosci
 
-UNIT:
+unit
  + id
- + name 
+ + unit_id // parent id
+ + name
  + description
- 
+ + factor
 
 SALDO:
  + id
@@ -209,7 +210,7 @@ Tabela wydarzen odnosnie projektow
  + unit: month
  + value: 1
  
-
+ 
 #### Zaleznosci
 
 type:
@@ -217,14 +218,52 @@ type:
  + name 
  + description
 
+Example
+type:
+ + time - month
+ + user-event 
+  + login
+  + logout
+  + created
+  + removed
+ + employee
+  + hired
+  + fired
+  + idzie na urlop
+  + wraca z urlopu
+  
+
 unit
  + id
  + unit_id // parent id
- + name 
+ + name
  + description
  + factor
  
 
+### Ogolny plan
+
+          +------------+
+          | EVENT LOGS |
+          +-----+------+
+                |
+                |
+            +---v----+
+      +-----+ EVENT  +----+
+      |     +--------+    |
+      |                   |
+      |                   |
+      v                   v
++-----+----+          +---+-----+
+| TRIGGER  |      +---+ PROJEKT +--+
++----------+      |   +---------+  |
+                  |                |
+                  |                |
+                  |                |
+                  |                |
+        +---------v----+     +-----v---------+
+        | Termin Input |     | Termin Output |
+        +--------------+     +---------------+
 
  
  
