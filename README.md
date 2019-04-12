@@ -18,6 +18,17 @@ mozna bylo latwo stworzyc i przetestowac prototyp
  
 
 ## Zasad dzialania
++ Dane wejsciowe zbierane sa poprzez Formularz
++ Aby wygenerowac dane wyjsciowe, np raport finansowy miesieczny , nalezy stworzyc:
+ + wyzwalacz, trigger, co miesiac
+ + event, w ktorym polaczy sie miesieczny trigger i projekt
+ + projekt, jaki ma byc realizowany, czyli miesieczny bilans w ktorym zawarte jest okreslenie ram danych jakie maja byc poddane analizie, okresla sie dane wejsciowe, czyli te zebrane przez formularz i dane wyjsciowe, czyli generowane przez bilans miesieczny
+ 
+ Termin Input i Termin Output to filtry ograniczajace zakres danych jakie maja byc wygenerowane,
+ np w przypadku obliczania SALDO, mozna przedstawic kilka zakresow czasowych, np tylko wydatki w weekendy, albo tylko w nieparzyste dni.
+ 
+ 
+ 
 
 
 
@@ -77,7 +88,8 @@ Tabela wzorcow do zbierania danych,
 okreslenie jakie dane beda zbierane
 ***
 
-### Termin Input/Output
+### Termin 
+Input/Output
 Tabela do zbierania danych,
 dodawanie danych z formularza lub aktywnych modolow na stronie www/aplikacji
 
@@ -185,23 +197,42 @@ Prezentacja wynikow w tabeli output
 
 ### Projects, v3
 
-+ projekt_id
++ project_id
 + name
 + descriptions
-+ input_id
-+ output_id
-+ value_factor
+
 
 -----
 ###### EXAMPLE
 + projekt_id
 + name: Oszczednosci
 + descriptions: wykonywanie na koniec miesiaca przeliczenia ile zostalo oszczednosci z wydanych pieniedzy, poprzez sprawdzenie salda wydatkow poniesionych/zaplanowanych
-+ termin_in_id: termin
-+ termin_out_id: termin
-+ value_factor: 1 (defualt)
++ value_factor: 1 (default)
 
-###### Input-Output 
+Inne:
++ Tworzenia arkusza dla pracownikow na nowy miesiac
++ Realizacja planu zmian, jesli ktos zmienil swoj plan i oka
+
+
+### Project_Termin
+moze byc tylko jeden termin, np do ustawiania co roku okreslony
+
+Input-Output
++ projekt_id
++ termin_id
++ termin_type: In/Out
+
+//SETTINGS
++ warunek wykonania tego dzialania: np wartosc nie mniejsza od zera
++ sposob dodania do listy istniejacych: dodaj jako nowy, zamien istniejacy, 
++ typ konwersji wartosci:
+  + przepisanie wartosci (1:1) - konwersja z faktorem 1
+  + konwersja (factor)
+  + ustawienie stalej, okreslonej wartosci (value), dzien tygodnia, data, zaleznie od typu danej
++ value_factor
+ 
+
+
 Projekty, Tabela do zbierania danych, Executed,
 Kazde wydarzenie oraz wykonanie musi byc rejetsrowane z mozliwoscia odtworzenia stanu poprzedniego danych zaleznych
 
