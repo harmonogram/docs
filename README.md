@@ -17,6 +17,32 @@ mozna bylo latwo stworzyc i przetestowac prototyp
 
 ## Zasad dzialania
 
+
+
+### Ogolny plan
+
+              +------------+
+              | EVENT LOGS |
+              +-----+------+
+                    |
+                    |
+                +---v----+
+          +-----+ EVENT  +----+
+          |     +--------+    |
+          |                   |
+          |                   |
+          v                   v
+    +-----+----+          +---+-----+
+    | TRIGGER  |      +---+ PROJEKT +--+
+    +----------+      |   +---------+  |
+                      |                |
+                      |                |
+                      |                |
+                      |                |
+            +---------v----+     +-----v---------+
+            | Termin Input |     | Termin Output |
+            +--------------+     +---------------+
+            
 ## Interfejs
 Aplikacja ma byc prosta do obslugi
 poprzez pojedyncze dotkniecie lub przesuniecie palcem po kalendarzu, zarysowanie obszaru kwadratu lub linii na kalendarzu.
@@ -240,30 +266,6 @@ unit
  + description
  + factor
  
-
-### Ogolny plan
-
-          +------------+
-          | EVENT LOGS |
-          +-----+------+
-                |
-                |
-            +---v----+
-      +-----+ EVENT  +----+
-      |     +--------+    |
-      |                   |
-      |                   |
-      v                   v
-+-----+----+          +---+-----+
-| TRIGGER  |      +---+ PROJEKT +--+
-+----------+      |   +---------+  |
-                  |                |
-                  |                |
-                  |                |
-                  |                |
-        +---------v----+     +-----v---------+
-        | Termin Input |     | Termin Output |
-        +--------------+     +---------------+
 
  
  
