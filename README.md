@@ -1,6 +1,8 @@
+![harmono.png](harmono.png)
+
 # docs
 Dokumentacja projektu harmonogramow
-![harmono.png](harmono.png)
+
 ## TODO
 + Stworzenie dokumentacji
 + prototyp na python, w edytorze jupyter, aby 
