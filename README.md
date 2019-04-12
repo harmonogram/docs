@@ -75,7 +75,7 @@ Tabela wzorcow do zbierania danych,
 okreslenie jakie dane beda zbierane
 ***
 
-### Input
+### Termin Input/Output
 Tabela do zbierania danych,
 dodawanie danych z formularza lub aktywnych modolow na stronie www/aplikacji
 
@@ -195,9 +195,9 @@ Prezentacja wynikow w tabeli output
 + projekt_id
 + name: Oszczednosci
 + descriptions: wykonywanie na koniec miesiaca przeliczenia ile zostalo oszczednosci z wydanych pieniedzy, poprzez sprawdzenie salda wydatkow poniesionych/zaplanowanych
-+ input_id
-+ output_id
-+ value_factor
++ termin_in_id: termin
++ termin_out_id: termin
++ value_factor: 1 (defualt)
 
 ###### Input-Output 
 Projekty, Tabela do zbierania danych, Executed,
