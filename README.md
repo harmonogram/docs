@@ -1,6 +1,13 @@
 # docs
 Dokumentacja projektu harmonogramow
 
+## TODO
++ Stworzenie dokumentacji
++ prototyp na python, w edytorze jupyter, aby 
+mozna bylo latwo stworzyc i przetestowac prototyp
++ stworzenie kolejnych wersji pozwalajacych na latwe kontrolowanie stanu obecnego 
++ wersje z mozliwoscia odtwarzania poprzednich stanow, naprawiania bledow, anulowania przeliczen
+
 
 
 
@@ -22,7 +29,9 @@ zawiera 3 podstawowe tabele:
 + projektow
 + wzorcow
 + Input, danych wejsciowych,
-+ Output, danych wyjsciowych, przeliczanych w celu wyswietlenia i wykonania dzialan
++ Output, danych wyjsciowych, przeliczanych w celu wyswietlenia i wykonania dzialan i pokazywania ich w widoku uzytkownika lub raportow.
+
+
 
 + raporty, sumy zbierane co okreslony cykl w celach historycznych i porownawczych
 + mediow, zrodel
@@ -41,7 +50,34 @@ description
 UNIT
 SALDO
 TYPE
+status: modyfikowane, przeniesione, zarchiwizowane, przeliczone, itd
 
+#### Zaleznosci
+
+UNIT:
+ + id
+ + name 
+ + description
+ 
+
+SALDO:
+ + id
+ + name 
+ + description
+ 
+
+TYPE:
+ + id
+ + name 
+ + description
+ 
+ 
+Status:
+ + id
+ + name 
+ + description
+ 
+ 
 #### EXAMPLE
 UNIT
 pieniadze: 
@@ -64,6 +100,10 @@ TYP:
 
 
 ### Tabela projektow, definicja obliczen danych wejsciowych / wyjsciowych
+logika obliczen
+mozna w ten sposob implementowac logike dla obliczen dzialan, raportow, godzin, itd
+Tworzyc nowe wartosci na podstawie juz istniejacych, podejmowac inne dzialania w zaleznosci do wyniku
+
 metody przeliczania jakie SALDO bedzie uzywane
 Jednostki beda przeliczane w locie 
 Prezentacja wynikow w tabeli output
@@ -80,19 +120,28 @@ Prezentacja wynikow w tabeli output
 + type_out: expired
 + unit_in: EUR
 + unit_out: PLN
-+ value_in: 100
-+ value_out: 420
-+ factor: 4,2
-
-### Tabela do zbierania danych, Output Projektow
++ value_factor: 4,2 // value_in: 100 -> value_out: 420
 
 
-pieniadze: 
- EUR
- PLN
-waga 
- kg
- g
+### Tabela wydarzen odnosnie projektow, Events
+
++ projekt_id
++ settings - config data for create event
++ type: period_time - jak czesto maja byc wykonywane, czas, period
++ value: 10 
+
+#### Zaleznosci
+
+event_type:
+ + id
+ + name 
+ + description
+
+
+
+### Tabela do zbierania danych, Executed, Output Projektow
+Kazde wydarzenie oraz wykonanie musi byc rejetsrowane z mozliwoscia odtworzenia stanu poprzedniego danych zaleznych
+
 
 
 SALDO:
