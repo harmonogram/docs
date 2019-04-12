@@ -43,6 +43,8 @@ mozna bylo latwo stworzyc i przetestowac prototyp
             | Termin Input |     | Termin Output |
             +--------------+     +---------------+
             
+http://asciiflow.com/
+
 ## Interfejs
 Aplikacja ma byc prosta do obslugi
 poprzez pojedyncze dotkniecie lub przesuniecie palcem po kalendarzu, zarysowanie obszaru kwadratu lub linii na kalendarzu.
