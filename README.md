@@ -106,7 +106,9 @@ TYP:
  used, zuzyty
 
 
-### Tabela projektow, definicja obliczen danych wejsciowych / wyjsciowych
+### Projects, v1
+Tabela projektow, 
+definicja obliczen danych wejsciowych / wyjsciowych
 logika obliczen
 mozna w ten sposob implementowac logike dla obliczen dzialan, raportow, godzin, itd
 Tworzyc nowe wartosci na podstawie juz istniejacych, podejmowac inne dzialania w zaleznosci do wyniku
@@ -135,7 +137,7 @@ Prezentacja wynikow w tabeli output
 + status_in: aktywne
 + status_out: obliczone
 
-##### Wersja 2
+### Projects, v2
 
 + projekt_id
 + name: Oszczednosci
@@ -149,16 +151,18 @@ Prezentacja wynikow w tabeli output
 + value_factor: 4,2 // value_in: 100 -> value_out: 420
 + status: aktywne
 
-##### Wersja 3
+
+### Projects, v3
+
 + projekt_id
-+ name: Oszczednosci
-+ descriptions: wykonywanie na koniec miesiaca przeliczenia ile zostalo oszczednosci z wydanych pieniedzy, poprzez sprawdzenie salda wydatkow poniesionych/zaplanowanych
++ name
++ descriptions
 + input_id
 + output_id
 + value_factor
 
 -----
-
+###### EXAMPLE
 + projekt_id
 + name: Oszczednosci
 + descriptions: wykonywanie na koniec miesiaca przeliczenia ile zostalo oszczednosci z wydanych pieniedzy, poprzez sprawdzenie salda wydatkow poniesionych/zaplanowanych
@@ -166,6 +170,20 @@ Prezentacja wynikow w tabeli output
 + output_id
 + value_factor
 
+###### Input-Output 
+Projekty, Tabela do zbierania danych, Executed,
+Kazde wydarzenie oraz wykonanie musi byc rejetsrowane z mozliwoscia odtworzenia stanu poprzedniego danych zaleznych
+
+
+SALDO:
+ konto bankowe
+ rachunki domowe
+ pomiar cisnienia
+ 
+CALC
+ available, pozostaly
+ expired, pozostaly niewykorzystany w czasie, roznica +/-
+ 
 
 ### Events, projekt_trigger
 Tabela wydarzen odnosnie projektow
@@ -207,23 +225,9 @@ unit
  + factor
  
 
-### Tabela do zbierania danych, Executed, Output Projektow
-Kazde wydarzenie oraz wykonanie musi byc rejetsrowane z mozliwoscia odtworzenia stanu poprzedniego danych zaleznych
 
-
-
-SALDO:
- konto bankowe
- rachunki domowe
- pomiar cisnienia
- 
-CALC
- available, pozostaly
- expired, pozostaly niewykorzystany w czasie, roznica +/-
  
  
-
-### Tabela wzorcow, Pattern
 
 
  
