@@ -63,12 +63,52 @@ http://asciiflow.com/
 
 
 
-Projects
+
+Events_logs
++ id
++ status
+  + changed
+  + executed
++ info
++ time
+
+
+Events
++ id
 + project_id
++ trigger_id
+
+
+Trigger
+ + id
+ + name
+ + type
+ + unit
+ + value
+ 
+ 
+Projects
++ id
 + name
 + descriptions
 + tags
 + settings
+
+
+Job
++ id
++ name
++ project_id
++ api-url
++ api-data-input
+
+
+Job_log
+ + job_id
+ + api-data-output
+ + status
+ + time
+ 
 
 Termin
 + id
@@ -78,12 +118,6 @@ Termin
 + SALDO
 + TYPE
 + Status
-
-Jobs
-+ name
-+ projekt_id
-+ termin_id
-+ termin_type
 
 ## Interfejs
 Aplikacja ma byc prosta do obslugi
