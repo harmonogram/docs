@@ -35,6 +35,14 @@ okreslenie jakie dane beda zbierane
 ### Tabela do zbierania danych, Input
 dodawanie danych z formularza lub aktywnych modolow na stronie www/aplikacji
 
+id
+name
+description
+UNIT
+SALDO
+TYPE
+
+#### EXAMPLE
 UNIT
 pieniadze: 
  EUR
@@ -55,28 +63,29 @@ TYP:
  used, zuzyty
 
 
-### Tabela projektow, definicja danych wyjsciowych
+### Tabela projektow, definicja obliczen danych wejsciowych / wyjsciowych
 metody przeliczania jakie SALDO bedzie uzywane
 Jednostki beda przeliczane w locie 
 Prezentacja wynikow w tabeli output
 
-id
-name
-description
-UNIT
-SALDO
-TYPE
-
 #### Example
 
-+ name: Osczednosci
++ projekt_id
++ name: Oszczednosci
 + descriptions: wykonywanie na koniec miesiaca przeliczenia ile zostalo oszczednosci z wydanych pieniedzy, poprzez sprawdzenie salda wydatkow poniesionych/zaplanowanych
-+ unit: EUR
-+ saldo: savings/spendings
-+ type: available/expired
 
++ saldo_in: spendings
++ saldo_out: savings
++ type_in: available
++ type_out: expired
++ unit_in: EUR
++ unit_out: PLN
++ value_in: 100
++ value_out: 420
++ factor: 4,2
 
-### Tabela do zbierania danych, Output
+### Tabela do zbierania danych, Output Projektow
+
 
 pieniadze: 
  EUR
