@@ -118,6 +118,10 @@ Prezentacja wynikow w tabeli output
 + name: Oszczednosci
 + descriptions: wykonywanie na koniec miesiaca przeliczenia ile zostalo oszczednosci z wydanych pieniedzy, poprzez sprawdzenie salda wydatkow poniesionych/zaplanowanych
 
++ data_from_in: 1 April 2019 // current month
++ data_from_out: 1 April 2019
++ data_to_in: 30 April 2019
++ data_to_out: 30 April 2019
 + saldo_in: spendings
 + saldo_out: savings
 + type_in: available
@@ -125,14 +129,21 @@ Prezentacja wynikow w tabeli output
 + unit_in: EUR
 + unit_out: PLN
 + value_factor: 4,2 // value_in: 100 -> value_out: 420
++ status_in: aktywne
++ status_out: obliczone
+
 
 
 ### Tabela wydarzen odnosnie projektow, Events
 
 + projekt_id
++ name: comiesieczny raport osczednosci
++ descriptions: comiesieczne wykonywanie raportu osczednosci
+
 + settings - config data for create event
 + type: period_time - jak czesto maja byc wykonywane, czas, period
-+ value: 10 
++ unit: month
++ value: 1
 
 #### Zaleznosci
 
@@ -141,7 +152,13 @@ event_type:
  + name 
  + description
 
-
+event_unit
+ + id
+ + unit_id // parent id
+ + name 
+ + description
+ + factor
+ 
 
 ### Tabela do zbierania danych, Executed, Output Projektow
 Kazde wydarzenie oraz wykonanie musi byc rejetsrowane z mozliwoscia odtworzenia stanu poprzedniego danych zaleznych
